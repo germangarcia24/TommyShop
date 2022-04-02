@@ -133,12 +133,11 @@ C:\Users\user\Desktop\TommyShop-master\bin\System.Memory.dll
 C:\Users\user\Desktop\TommyShop-master\bin\System.Buffers.dll
 C:\Users\user\Desktop\TommyShop-master\bin\K4os.Compression.LZ4.dll
 C:\Users\user\Desktop\TommyShop-master\bin\K4os.Hash.xxHash.dll
-C:\Users\user\Desktop\TommyShop-master\bin\System.Numerics.Vectors.dll
 C:\Users\user\Desktop\TommyShop-master\bin\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\user\Desktop\TommyShop-master\bin\MySql.Data.xml
 C:\Users\user\Desktop\TommyShop-master\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\user\Desktop\TommyShop-master\obj\Debug\TommyShop.csprojAssemblyReference.cache
 C:\Users\user\Desktop\TommyShop-master\obj\Debug\TommyShop.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\TommyShop-master\obj\Debug\TommyShop.csproj.CopyComplete
 C:\Users\user\Desktop\TommyShop-master\obj\Debug\TommyShop.dll
 C:\Users\user\Desktop\TommyShop-master\obj\Debug\TommyShop.pdb
+C:\Users\user\Desktop\TommyShop-master\obj\Debug\TommyShop.csproj.AssemblyReference.cache
