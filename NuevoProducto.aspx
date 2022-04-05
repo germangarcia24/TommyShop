@@ -24,7 +24,11 @@
 </head>
 <form id="form1" runat="server">
     <asp:scriptmanager id="ScriptManager1" runat="server" />
+
     <body id="page-top">
+
+    
+    <!-- No sale el comentario -->
 
         <!-- Page Wrapper -->
         <div id="wrapper">
@@ -409,22 +413,13 @@
                             <div class="col-xl-3 col-md-6 mb-4">
                                 <label>Categoria</label>
                                 <asp:DropDownList runat="server" class="form-control text-lg-center" ID="DropCategoria">
-                                    <asp:ListItem Text="Selecciona" />
-                                    <asp:ListItem Text="Limpieza" />
-                                    <asp:ListItem Text="Mantenimiento" />
-                                    <asp:ListItem Text="Dibujo" />
                                 </asp:DropDownList>
-                                  
                             </div>
 
                             <!-- Columna 4 -->
                             <div class="col-xl-3 col-md-6 mb-4">
                                 <label>Proveedor</label>
                                 <asp:DropDownList runat="server" class="form-control text-lg-center" ID="DropProveedor">
-                                    <asp:ListItem Text="Selecciona" />
-                                    <asp:ListItem Text="Steren" />
-                                    <asp:ListItem Text="Grupo papelero Gutierrez" />
-                                    <asp:ListItem Text="Tomy Papeleria" />
                                 </asp:DropDownList>
                                   
                             </div>
@@ -438,10 +433,6 @@
                             <div class="col-xl-3 col-md-6 mb-4">
                                 <label>Fabricante</label>
                                 <asp:DropDownList runat="server" class="form-control text-lg-center" ID="DropFabricante">
-                                    <asp:ListItem Text="Selecciona" />
-                                    <asp:ListItem Text="Steren" />
-                                    <asp:ListItem Text="Apple" />
-                                    <asp:ListItem Text="Nike" />
                                 </asp:DropDownList>
                                   
                             </div>

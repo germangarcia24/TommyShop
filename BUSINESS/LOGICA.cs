@@ -7,7 +7,7 @@ using System.Data;
 using System.Configuration;
 
 namespace TommyShop.BUSINESS
-{
+{   
     public class LOGICA
     {
         public static DataTable ObtLogin(string usuario, string password)
@@ -22,6 +22,32 @@ namespace TommyShop.BUSINESS
             int dt_1 = 0;
             dt_1 = Procesos.GuardarProducto(Nombre,CodigoDeBarras,SKU,Cantidad,Precio,Clave_Sat,Id_Categoria,Id_proveedor,Id_fabricante,Ancho,Alto,Profundidad,Peso);
             return dt_1;
+        }
+
+        public static DataTable ObtCatCategorias()
+        {
+            DataTable dt = new DataTable();
+            dt = Procesos.ObtCatCategorias();
+            return dt;
+        }
+        public static DataTable ObtCatProveedores()
+        {
+            DataTable dt = new DataTable();
+            dt = Procesos.ObtCatProveedores();
+            return dt;
+        }
+        public static DataTable ObtCatFabricantes()
+        {
+            DataTable dt = new DataTable();
+            dt = Procesos.ObtCatFabricantes();
+            return dt;
+        }
+
+        public static DataTable ObtListaProductos()
+        {
+            DataTable dt = new DataTable();
+            dt = Procesos.ObtListaProductos();
+            return dt;
         }
     }
 }

@@ -126,7 +126,7 @@
                             <a class="collapse-item" href="#">Entradas</a>
                             <a class="collapse-item" href="#">Bitacora</a>
                             <a class="collapse-item" href="NuevoProducto.aspx">Nuevo producto</a>
-                            <a class="collapse-item" href="#">Productos</a>
+                            <a class="collapse-item" href="Productos.aspx">Productos</a>
                             <a class="collapse-item" href="#">Proveedor</a>
                             <a class="collapse-item" href="#">Calcular</a>
                             <a class="collapse-item" href="#">Trafico</a>

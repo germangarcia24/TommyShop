@@ -64,5 +64,31 @@ namespace TommyShop
             insertado = Conexion.ValidacionInsert(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_Inserta_producto", parCol);
             return insertado;
         }
+
+        public static DataTable ObtCatCategorias()
+        {
+            DataTable dt = new DataTable();
+            dt = Conexion.EjecutaProcesoSinParamnetros(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_ObtCatCategorias");
+            return dt;
+        }
+        public static DataTable ObtCatProveedores()
+        {
+            DataTable dt = new DataTable();
+            dt = Conexion.EjecutaProcesoSinParamnetros(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_ObtCatProveedor");
+            return dt;
+        }
+        public static DataTable ObtCatFabricantes()
+        {
+            DataTable dt = new DataTable(); 
+             dt = Conexion.EjecutaProcesoSinParamnetros(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_ObtCatFabricante");
+            return dt;
+        }
+
+        public static DataTable ObtListaProductos()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable = Conexion.EjecutaProcesoSinParamnetros(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_ObtListaProductos");
+            return dataTable;
+        }   
     }
 }
