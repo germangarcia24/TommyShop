@@ -89,6 +89,62 @@ namespace TommyShop
             DataTable dataTable = new DataTable();
             dataTable = Conexion.EjecutaProcesoSinParamnetros(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_ObtListaProductos");
             return dataTable;
-        }   
+        }
+
+        public static DataTable MostarProducto(int IDU)
+        {
+            DataTable dt_uno = new DataTable();
+            MySqlParameter[] parCol =
+            {
+                /*Variables SQL*/
+                new MySqlParameter("@IDU",MySqlDbType.Int32)
+            };
+            parCol[0].Value = IDU;
+
+            dt_uno = Conexion.EjecutaProcesoDataSet(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_EditarProducto", parCol);
+
+            return dt_uno;
+        }
+
+        public static int ActualizarDatosProducto(int IDU, string Nombre, string CodigoDeBarras, string SKU, int Cantidad, float Precio, string Clave_Sat, int Id_Categoria, int Id_proveedor, int Id_fabricante, float Ancho, float Alto, float Profundidad, float Peso)
+        {
+            int dt_uno = 0;
+            MySqlParameter[] parCol =
+            {
+                /*Variables SQL*/
+                new MySqlParameter("@IDU",MySqlDbType.Int32),
+                new MySqlParameter("@Nombre",MySqlDbType.VarChar),
+                new MySqlParameter("@CodigoDeBarras",MySqlDbType.VarChar),
+                new MySqlParameter("@SKU",MySqlDbType.VarChar),
+                new MySqlParameter("@Cantidad",MySqlDbType.Int32),
+                new MySqlParameter("@Precio",MySqlDbType.Float),
+                new MySqlParameter("@Clave_Sat",MySqlDbType.VarChar),
+                new MySqlParameter("Id_Categoria",MySqlDbType.Int32),
+                new MySqlParameter("@Id_Proveedor",MySqlDbType.Int32),
+                new MySqlParameter("@Id_Fabricante",MySqlDbType.Int32),
+                new MySqlParameter("@Ancho",MySqlDbType.Float),
+                new MySqlParameter("@Alto",MySqlDbType.Float),
+                new MySqlParameter("@Profundidad",MySqlDbType.Float),
+                new MySqlParameter("@Peso",MySqlDbType.Float)
+            };
+            parCol[0].Value = IDU;
+            parCol[1].Value = Nombre;
+            parCol[2].Value = CodigoDeBarras;
+            parCol[3].Value = SKU;
+            parCol[4].Value = Cantidad;
+            parCol[5].Value = Precio;
+            parCol[6].Value = Clave_Sat;
+            parCol[7].Value = Id_Categoria;
+            parCol[8].Value = Id_proveedor;
+            parCol[9].Value = Id_fabricante;
+            parCol[10].Value = Ancho;
+            parCol[11].Value = Alto;
+            parCol[12].Value = Profundidad;
+            parCol[13].Value = Peso;
+
+            dt_uno = Conexion.ValidacionInsert(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_ActualizaProducto", parCol);
+
+            return dt_uno;
+        }
     }
 }

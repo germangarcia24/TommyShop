@@ -132,6 +132,10 @@
     <Content Include="js\mysql.js" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\sb-admin-2.min.js" />
+    <Content Include="lib\fontawesome-iconpicker\css\fontawesome-iconpicker.css" />
+    <Content Include="lib\fontawesome-iconpicker\css\fontawesome-iconpicker.min.css" />
+    <Content Include="lib\fontawesome-iconpicker\js\fontawesome-iconpicker.js" />
+    <Content Include="lib\fontawesome-iconpicker\js\fontawesome-iconpicker.min.js" />
     <Content Include="login.html" />
     <Content Include="Productos.aspx" />
     <Content Include="register.html" />
@@ -1847,6 +1851,7 @@
     <Content Include=".travis.yml" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <Content Include="libman.json" />
     <None Include="packages.config" />
     <Content Include="scss\navs\_global.scss" />
     <Content Include="scss\navs\_sidebar.scss" />

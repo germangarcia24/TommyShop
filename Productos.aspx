@@ -32,20 +32,73 @@
 
 
     <!-- Modal Editar Productos -->
-    <div id="ModalEditarProductos" class="modal fade" runat="server" aria-hidden="true">
+    <div class="modal fade" id="ModalEditarProductos" runat="server" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class ="modal-content modal-lg">
-                <div class ="modal-header">
-                    <h5 id="EditarProductosTitulo" class="modal-title">Editar Producto</h5>
-                    <button class="close" type = "button" data-dismiss="modal" aria-label="close"> <span aria-hidden="true" >x</span></button>
-                        <div class = "modal-body" runat="server">
-                        <!--Aqui va toda la información-->
-                           
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type ="button" runat="server" data-dismiss="modal">Cancelar</button>
-                            <a class="btn btn-success" type ="button" runat="server" data-dismiss="modal">Guardar</a>
-                        </div>
+            <div class="modal-content lg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="">Editar Productos</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body" runat="server">
+                    <label>Nombre del producto</label>
+                    <input type="text" class="form-control form-control-user" runat="server"
+                        id="NomProducto" placeholder="Nombre del producto">         
+                    <br>
+                    <label>Código de barras</label>
+                    <input type="text" class="form-control form-control-user" runat="server"
+                        id="CodBarras" placeholder="Código de barras">
+                    <br>
+
+                    <label>SKU</label>
+                    <input type="text" class="form-control form-control-user" runat="server"
+                        id="CodSKU" placeholder="SKU">
+                    <br>
+                    <label>Unidades</label>
+                    <input type="number" class="form-control form-control-user" runat="server"
+                        id="Unidades" placeholder="Unidades">
+                    <br>
+                    <label>Precio</label>
+                    <input type="number" class="form-control form-control-user" runat="server"
+                        id="Precio" placeholder="Precio del producto">
+                    <br>
+                    <label>Clave Sat</label>
+                    <input type="text" class="form-control form-control-user" runat="server"
+                        id="ClaveSat" placeholder="Clave Sat">
+                    <br>
+                    <label>Categoria</label>
+                    <asp:DropDownList runat="server" class="form-control text-lg-center" ID="DropCategoria">
+                    </asp:DropDownList>
+                    <br>
+                    <label>Proveedor</label>
+                    <asp:DropDownList runat="server" class="form-control text-lg-center" ID="DropProveedor">
+                    </asp:DropDownList>
+                    <br>
+                    <label>Fabricante</label>
+                    <asp:DropDownList runat="server" class="form-control text-lg-center" ID="DropFabricante">
+                    </asp:DropDownList>
+                    <br>
+                    <label>Ancho</label>
+                    <input type="number" class="form-control form-control-user" runat="server"
+                        id="Ancho" placeholder="Ancho del producto (cm)">
+                    <br>
+                    <label>Alto</label>
+                    <input type="number" class="form-control form-control-user" runat="server"
+                        id="Alto" placeholder="Alto del producto (cm)">
+                    <br>
+                    <label>Profundidad</label>
+                    <input type="number" class="form-control form-control-user" runat="server"
+                        id="Profundo" placeholder="Profundidad del producto (cm)">
+                     <br>
+                    <label>Peso</label>
+                    <input type="number" class="form-control form-control-user" runat="server"
+                        id="Peso" placeholder="Peso del producto (gr)">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" runat="server" data-dismiss="modal">Cancelar</button>
+                        <a class="btn btn-success" type="button" runat="server" id="GuardarCambios" onclick="return confirm('¿Desea guardar los cambios?');" onserverclick="GuardarCambios_ServerClick">Guardar</a>
+
                 </div>
             </div>
         </div>
@@ -166,8 +219,6 @@
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
-
         </ul>
         <!-- End of Sidebar -->
 
@@ -385,12 +436,11 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <asp:GridView runat="server" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <asp:GridView runat="server" class="table table-bordered" ID="dataTable" Width="100%" CellSpacing="0" OnRowCommand="dataTable_RowCommand" OnRowDataBound="dataTable_RowDataBound">
                                     <Columns>
-                                        <asp:ButtonField ControlStyle-CssClass ="btn btn-warning btn-circle btn-lg" CommandName="Editar" HeaderText="Accion" ShowHeader="True" ButtonType="Image" />
+                                       <asp:ButtonField CommandName="Editar" HeaderText="Accion" ShowHeader="true" ControlStyle-CssClass="fa-solid fa-pen-to-square btn btn-primary btn-circle"  />
                                     </Columns>
                                 </asp:GridView>
-                                 
                             </div>
                         </div>
                     </div>
@@ -461,6 +511,17 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="js/demo/datatables-demo.js"></script>
+    <script src="https://kit.fontawesome.com/2f15628f78.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function AbrirModalEditar() {
+            $('#ModalEditarProductos').modal('show');
+        }
+    </script>
+    <script type="text/javascript">
+        function Refrescar() {
+            window.location.reload();
+        }
+    </script>
 
 </body>
     </form>

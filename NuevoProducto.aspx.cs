@@ -48,15 +48,15 @@ namespace TommyShop
                 {
                     if (String.IsNullOrEmpty(NomProducto.Value.ToString()))
                     {
-                        NomProducto.Value = "<Vacio>";
+                        NomProducto.Value = "(En blanco)";
                     }
                     if (String.IsNullOrEmpty(CodBarras.Value.ToString()))
                     {
-                        CodBarras.Value = "<Vacio>";
+                        CodBarras.Value = "(En blanco)";
                     }
                     if (String.IsNullOrEmpty(CodSKU.Value.ToString()))
                     {
-                        CodSKU.Value = "<Vacio>";
+                        CodSKU.Value = "(En blanco)";
                     }
                     if (String.IsNullOrEmpty(Unidades.Value.ToString()))
                     {
@@ -68,7 +68,7 @@ namespace TommyShop
                     }
                     if (String.IsNullOrEmpty(ClaveSat.Value.ToString()))
                     {
-                        ClaveSat.Value = "<Vacio>";
+                        ClaveSat.Value = "(En blanco)";
                     }
                     if (String.IsNullOrEmpty(Ancho.Value.ToString()))
                     {

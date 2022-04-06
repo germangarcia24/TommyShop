@@ -49,5 +49,19 @@ namespace TommyShop.BUSINESS
             dt = Procesos.ObtListaProductos();
             return dt;
         }
+
+        public static DataTable MostrarProducto(int IDU)
+        {
+            DataTable dt_1 = new DataTable();
+            dt_1 = Procesos.MostarProducto(IDU);
+            return dt_1;
+        }
+
+        public static int ActualizarDatosProducto(int IDU, string Nombre, string CodigoDeBarras, string SKU, int Cantidad, float Precio, string Clave_Sat, int Id_Categoria, int Id_proveedor, int Id_fabricante, float Ancho, float Alto, float Profundidad, float Peso)
+        {
+            int dt_1 = 0;
+            dt_1 = Procesos.ActualizarDatosProducto(IDU,Nombre,CodigoDeBarras,SKU,Cantidad,Precio,Clave_Sat,Id_Categoria,Id_proveedor,Id_fabricante,Ancho,Alto,Profundidad,Peso);
+            return dt_1;
+        }
     }
 }
