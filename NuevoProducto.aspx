@@ -37,7 +37,7 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.aspx">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <img src="img/tommy_logosm.png">
                     </div>
@@ -74,8 +74,8 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Elementos</h6>
                             <a class="collapse-item" href="#">Resumen</a>
-                            <a class="collapse-item" href="Cat_exibicion.html">Catalogo de exibicion</a>
-                            <a class="collapse-item" href="Cat_Inventario.html">Catalogo de inventario</a>
+                            <a class="collapse-item" href="#">Catalogo de exibicion</a>
+                            <a class="collapse-item" href="#">Catalogo de inventario</a>
                             <a class="collapse-item" href="#" data-toggle="modal" data-target="#CatModal">Categorias</a>
                             <a class="collapse-item" href="#">Fabricantes</a>
                             <a class="collapse-item" href="#">Promociones</a>
@@ -129,9 +129,11 @@
                             <a class="collapse-item" href="#">Salidas</a>
                             <a class="collapse-item" href="#">Entradas</a>
                             <a class="collapse-item" href="#">Bitacora</a>
-                            <a class="collapse-item" href="#">Nuevo producto</a>
-                            <a class="collapse-item" href="#">Productos</a>
-                            <a class="collapse-item" href="#">Proveedor</a>
+                            <a class="collapse-item" href="NuevoProducto.aspx">Nuevo producto</a>
+                            <a class="collapse-item" href="Productos.aspx">Productos</a>
+                            <a class="collapse-item" href="VistaCategorias.aspx">Categorias</a>
+                            <a class="collapse-item" href="#">Proveedores</a>
+                            <a class="collapse-item" href="#">Fabricantes</a>
                             <a class="collapse-item" href="#">Calcular</a>
                             <a class="collapse-item" href="#">Trafico</a>
                             <a class="collapse-item" href="#">Bodega virtual</a>

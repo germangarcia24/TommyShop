@@ -35,6 +35,7 @@ namespace TommyShop
             }
             dataTable.DataSource = BUSINESS.LOGICA.ObtListaProductos();
             dataTable.DataBind();
+            ObtEtiquetasProductos();
 
         }
 
@@ -87,6 +88,7 @@ namespace TommyShop
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, false);
                 dataTable.DataSource = BUSINESS.LOGICA.ObtListaProductos();
                 dataTable.DataBind();
+                ObtEtiquetasProductos();
             }
         }
 
@@ -100,6 +102,18 @@ namespace TommyShop
             {
                 e.Row.TableSection = TableRowSection.TableFooter;
             }
+        }
+        
+        public void ObtEtiquetasProductos()
+        {
+            DataTable dt = new DataTable();
+            dt = BUSINESS.LOGICA.ObtEtiquetasProductos();   
+            DataRow dr = dt.Rows[0];
+            CantidadMensual.InnerText = dr[0].ToString();
+            ValorInventario.InnerText = dr[1].ToString();
+            ProductosRegistrados.InnerText = dr[2].ToString();
+            TotalProductos.InnerText = dr[3].ToString();
+            progress.Attributes.Add("style", "width: "+dr[2].ToString()+"");
         }
     }
 }

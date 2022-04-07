@@ -137,6 +137,8 @@
     <Content Include="lib\fontawesome-iconpicker\js\fontawesome-iconpicker.js" />
     <Content Include="lib\fontawesome-iconpicker\js\fontawesome-iconpicker.min.js" />
     <Content Include="login.html" />
+    <Content Include="VistaProveedores.aspx" />
+    <Content Include="VistaCategorias.aspx" />
     <Content Include="Productos.aspx" />
     <Content Include="register.html" />
     <Content Include="tables.html" />
@@ -1824,6 +1826,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="VistaProveedores.aspx.cs">
+      <DependentUpon>VistaProveedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaProveedores.aspx.designer.cs">
+      <DependentUpon>VistaProveedores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaCategorias.aspx.cs">
+      <DependentUpon>VistaCategorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaCategorias.aspx.designer.cs">
+      <DependentUpon>VistaCategorias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Productos.aspx.cs">
       <DependentUpon>Productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2035,6 +2051,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

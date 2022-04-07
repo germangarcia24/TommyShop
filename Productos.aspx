@@ -110,7 +110,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.aspx">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <img src="img/tommy_logosm.png">
                 </div>
@@ -146,14 +146,14 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Elementos</h6>
                         <a class="collapse-item" href="#">Resumen</a>
-                        <a class="collapse-item" href="Cat_exibicion.html">Catalogo de exibicion</a>
-                        <a class="collapse-item" href="Cat_Inventario.html">Catalogo de inventario</a>
+                        <a class="collapse-item" href="#">Catalogo de exibicion</a>
+                        <a class="collapse-item" href="#">Catalogo de inventario</a>
                         <a class="collapse-item" href="#">Categorias</a>
                         <a class="collapse-item" href="#">Fabricantes</a>
                         <a class="collapse-item" href="#">Promociones</a>
                         <a class="collapse-item" href="#">Precio al mayoreo</a>
                         <a class="collapse-item" href="#">Ganancia general</a>
-                        <a class="collapse-item" data-toggle="modal" data-target="#ModalEditarProductos" runnat="server">Cargar CSV</a>
+                        <a class="collapse-item" href="#">Cargar CSV</a>
                         <a class="collapse-item" href="#">Compradores</a>
                     </div>
                 </div>
@@ -200,9 +200,11 @@
                         <a class="collapse-item" href="#">Salidas</a>
                         <a class="collapse-item" href="#">Entradas</a>
                         <a class="collapse-item" href="#">Bitacora</a>
-                        <a class="collapse-item" href="#">Nuevo producto</a>
-                        <a class="collapse-item" href="#">Productos</a>
-                        <a class="collapse-item" href="#">Proveedor</a>
+                        <a class="collapse-item" href="NuevoProducto.aspx">Nuevo producto</a>
+                        <a class="collapse-item" href="Productos.aspx">Productos</a>
+                        <a class="collapse-item" href="VistaCategorias.aspx">Categorias</a>
+                        <a class="collapse-item" href="#">Proveedores</a>
+                        <a class="collapse-item" href="#">Fabricantes</a>
                         <a class="collapse-item" href="#">Calcular</a>
                         <a class="collapse-item" href="#">Trafico</a>
                         <a class="collapse-item" href="#">Bodega virtual</a>
@@ -429,10 +431,97 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Catalogo de productos</h1>
 
+                    <div class="row">
+
+                        <!-- Ingreso de mercancia mensual -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Entradas en el mes actual</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="CantidadMensual" runat="server"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Valor del inventario -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Valor del inventario</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id ="ValorInventario" runat="server"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Productos registrados completamente -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Productos registrados completamente
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="ProductosRegistrados" runat="server"></div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 80%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100" id="progress" runat="server"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total de Productos -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Total de productos</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="TotalProductos" runat="server"></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <%--<i class="fa-solid fa-boxes-stacked text-gray-300"></i>--%>
+                                            <i class="fas fa-warehouse fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Catalogo</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Productos</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -517,11 +606,7 @@
             $('#ModalEditarProductos').modal('show');
         }
     </script>
-    <script type="text/javascript">
-        function Refrescar() {
-            window.location.reload();
-        }
-    </script>
+
 
 </body>
     </form>

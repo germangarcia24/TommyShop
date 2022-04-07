@@ -146,5 +146,54 @@ namespace TommyShop
 
             return dt_uno;
         }
-    }
+        public static DataTable ObtEtiquetasProducto()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable = Conexion.EjecutaProcesoSinParamnetros(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_EtiquetasProductos");
+            return dataTable;
+        }
+
+        public static int GuardarCategoria(string Nombre)
+        {
+            int insertado = 0;
+            MySqlParameter[] parCol =
+            {
+                new MySqlParameter("@NombreCat",MySqlDbType.VarChar),
+            };
+            parCol[0].Value = Nombre;
+
+            insertado = Conexion.ValidacionInsert(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_InsertaCategoria", parCol);
+            return insertado;
+        }
+        public static DataTable MostrarCategoriaModal(int IDU)
+        {
+            DataTable dt_uno = new DataTable();
+            MySqlParameter[] parCol =
+            {
+                /*Variables SQL*/
+                new MySqlParameter("@IDU",MySqlDbType.Int32)
+            };
+            parCol[0].Value = IDU;
+
+            dt_uno = Conexion.EjecutaProcesoDataSet(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_EditarCategorias", parCol);
+
+            return dt_uno;
+        }
+        public static int ActualizarCatalogo(int IDU, string Nombre)
+        {
+            int dt_uno = 0;
+            MySqlParameter[] parCol =
+            {
+                /*Variables SQL*/
+                new MySqlParameter("@IDU",MySqlDbType.Int32),
+                new MySqlParameter("@Nombre",MySqlDbType.VarChar)
+            };
+            parCol[0].Value = IDU;
+            parCol[1].Value = Nombre;
+
+            dt_uno = Conexion.ValidacionInsert(ConfigurationManager.ConnectionStrings["Tommy"].ToString(), "sp_EditarCategoriasUpdate", parCol);
+
+            return dt_uno;
+        }
+    } 
 }
